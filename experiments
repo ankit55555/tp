@@ -1,0 +1,196 @@
+Exp2. 
+
+x<- 3L 
+print(class(x))
+
+x<- 3.6
+print(class(x))
+
+x<- "hii" 
+print(class(x))
+
+x<- 3i 
+print(class(x))
+
+x<- charToRaw("bye") 
+print(class(x))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Expt 3
+#vector
+x<- c(1,2,3,4)
+print(x)
+
+x<- 1:5
+print(x)
+
+#list
+x<- list("hii",3,33.3,"bye")
+print(x)
+
+#matrix
+x<- matrix(c(1,2,3,4,5,6),nrow = 3,byrow = TRUE) 
+print(x)
+
+#data frames
+x<- data.frame(no=c(1,2,3),val=c("a","b","c")) 
+print(x)
+
+
+
+
+
+
+
+
+
+
+
+Exp4
+ls("package:datasets")
+data(iris)   #in-built dataset
+str(iris) # data information
+
+library(funModeling)
+library(tidyverse)
+library(Hmisc)
+
+df_status(iris)   #dataframe
+plot_num(iris)
+ggplot(iris, mapping = aes(x=Sepal.Length, y=Petal.Length))+geom_line()
+summary(iris)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Exp-05
+# Bar plot
+library(ggplot2)
+library(datasets)
+data("iris")
+ggplot(data = iris,aes(x= Species, fill = Species))+
+  geom_bar()+
+  xlab("Species")+
+  ylab("count")+
+  ggtitle("Bar Plot of Sepal Length")
+
+#histogram
+library(ggplot2)
+library(datasets)
+data("iris")
+ggplot(data = iris,aes(x= Sepal.Width))+
+  geom_histogram(binwidth = 0.2, color="black", aes(fill=Species))+
+  xlab("Sepal Width")+
+  ylab("Frequency")+
+  ggtitle("Histogram of sepal Width")
+
+#boxplot
+library(ggplot2)
+library(datasets)
+ggplot(iris, aes(x = Species, y = Sepal.Length)) + 
+  geom_boxplot(aes(fill=Species))+
+  ylab("Sepal Length")+
+  ggtitle("Iris Box Plot")
+
+
+
+#density
+library(ggplot2)
+ggplot(iris, aes(x = Sepal.Length, color= Species, fill=Species)) + 
+  geom_density(alpha=0.3)+
+  xlab("Petal Length (cm)")+
+  ylab("Density")+
+  ggtitle("Iris")
+
+
+#violin
+library(ggplot2)
+ggplot(iris,aes(Species, Sepal.Length,fill=Species))+geom_violin(aes(color=Species),trim=T)+
+  geom_boxplot(width=0.1)+
+  ggtitle("Iris Violin Plot")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Exp 6
+#Regression
+data(iris)
+regr <-lm(formula=Sepal.Width ~ Sepal.Length, data=iris)
+regr    
+summary(regr)
+coef(regr)
+confint(regr)
+fitted(regr)
+y<-data.frame(Sepal.Length = 4.25)
+x<-predict(regr,y)
+print(x)     #Sepal.Width predicted
+
+
+#Correlation
+data(iris)
+cor(iris$Sepal.Length,iris$Petal.Length)    #correlation function
+cor(iris$Petal.Length, iris$Sepal.Length)
+plot(x=iris$Sepal.Length, y=iris$Petal.Length, xlab="Sepal",ylab="Petal",xlim=c(4,8),ylim=c(3,8), main="Sepal.Length")
+
+cor.test(iris$Sepal.Length,iris$Petal.Length, method="pearson")
+cor.test(iris$Sepal.Length,iris$Petal.Length, method="kendall")
+cor.test(iris$Sepal.Length,iris$Petal.Length, method="spearman")
+
+
+
+
+
+exp 7
+# Program for even odd in list
+
+values <- list(1,2,3,4,56,7,8,7,88,89,100)
+for(num in values){
+    if((num %%2)==0){
+            print(paste(num,"is even"))
+    }
+    else{
+            print(paste(num,"is odd"))
+    }
+}
+
+
+
+
