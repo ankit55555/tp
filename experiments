@@ -29,7 +29,7 @@ print(class(x))
 
 
 
-Expt 3
+Expt 2  data structres
 #vector
 x<- c(1,2,3,4)
 print(x)
@@ -51,6 +51,71 @@ print(x)
 
 
 
+
+Exp 3
+
+#For loop
+# Create fruit vector  
+fruit <- c('Apple', 'Orange',"Guava", 'Pinapple', 'Banana','Grapes')  
+# Create the for statement  
+for ( i in fruit){   
+    print(i)  
+} 
+
+
+# While loop
+
+i <- 1
+while (i < 6) {
+  print(i)
+  i <- i + 1
+}
+
+
+#Repeat loop
+
+v <- c("Hello","repeat","loop")  
+cnt <- 2  
+repeat {  
+   print(v)  
+   cnt <- cnt+1  
+     
+   if(cnt > 5) {  
+      break  
+   }  
+}  
+ 
+
+
+
+#If 
+x <- 100
+  
+if(x > 10){
+print(paste(x, "is greater than 10"))
+}
+
+#if else
+x <- 5
+  
+# Check value is less than or greater than 10
+if(x > 10){
+  print(paste(x, "is greater than 10"))
+}else{
+  print(paste(x, "is less than 10"))
+}
+
+
+
+#Switch
+x <- switch(  
+2,  
+"Shubham",  
+"Nishka",  
+"Gunjan",     
+"Sumit"  
+)  
+print(x)  
 
 
 
