@@ -1,0 +1,103 @@
+{{ 'section6.css' | asset_url | stylesheet_tag }}
+
+<div class="section padding-tb-1 wf-section">
+    <div class="container">
+      
+        <div class="testimonial-slider w-slider">
+          
+            <div class="w-slider-mask" id="w-slider-mask-0">
+              
+                <div class="testimonial-slide w-slide" style="transform: translateX(0px); opacity: 1;">
+                  {% for blocks in section.blocks %}
+                    <div class="testimonial-content-wrapper">
+                        <h2 class="alternative-titles">{{blocks.settings.heading}}</h2>
+                        <div class="testimonial-user">
+                            <div class="small-text">{{blocks.settings.name}}</div>
+                            <img src="https://assets.website-files.com/618e479701c18f6732605a35/6193d86b1ca096c22acdf73f_five-star_review.svg"
+                                loading="lazy" alt="image-stars" class="margin-top-1">
+                        </div>
+                    </div>
+                  	{% endfor %}
+                </div>
+
+				
+            </div>
+		
+        </div>
+       
+
+    </div>
+</div>
+<!-- css script in theme .liquid  -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"
+    integrity="sha512-HGOnQO9+SP1V92SrtZfjqxxtLmVzqZpjFFekvzZVWoiASSQgSr4cw9Kqd2+l8Llp4Gm0G8GIFJ4ddwZilcdb8A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer">
+    </script>
+<script type="text/javascript">
+  $(".testimonial-slide").slick({
+    infinite: !0,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    fade: true,
+    responsive: [{
+      breakpoint: 660,
+      settings: {
+        arrows: !1
+      }
+    }]
+  })
+</script>
+
+{% schema %}
+{
+"name": "section6",
+"settings": [
+
+
+],
+
+"blocks":[
+        {
+            "name":"s6-blocks",
+             "type":"select",
+            "settings":[
+                
+                
+                  {
+                  "id":"heading",
+                  "type":"text",
+                  "label":"your heading",
+                  "default":"your line"
+                  },
+                  {
+                  "id":"name",
+                  "type":"text",
+                  "label":"name",
+                  "default":"name"
+                  }
+
+                    
+            ]
+        }
+
+],
+"presets": [
+{
+"category": "sections",
+"name":"section6"
+
+}
+]
+
+
+
+}
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}
